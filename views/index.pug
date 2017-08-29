@@ -1,0 +1,26 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.0.0/socket.io.js')
+  script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js')
+  script(src='/scripts/client.js')
+
+block content
+  //h1= title
+  //p Welcome to #{title}
+  div(id='loading')
+    div(id='fa_wrapper')
+      i(class='fa fa-spinner fa-pulse fa-3x fa-fw')
+      span(class='sr-only') Loading...
+  div(class='chart_wrapper')
+    each val, index in reports
+      div(class='report_wrapper' report_id=val.reportId)
+        h2(class='report_title')
+        div(id=val.reportId report_id=val.reportId class='report' chart_type=val.chartType chart_options=val.chartOptions)
