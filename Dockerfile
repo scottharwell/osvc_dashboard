@@ -18,7 +18,7 @@ RUN npm install
 COPY . .
 
 # Run TypeScript Transpiler
-RUN node_modes/typescript/bin/tsc
+RUN node_modules/typescript/bin/tsc
 
 # Use port 3000 for our app
 EXPOSE  3000
