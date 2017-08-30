@@ -47,7 +47,7 @@ exports.OSvC = OSvC;
 2. Pull the Redis docker image. `docker pull redis`
 3. Pull the osvcd docker image. `docker pull scottharwell/osvc_dashboard`
 4. Start the Redis container first. `docker run --name redis --network=osvcd-net redis`
-5. Start the osvcd container.  We will expose port 3000 to the host system so that it has access to our application.  Also, we point the configuration folder of the docker container to the folder on our host so that we can manage the configuration dynamically. `docker run --name osvcd -p 3000:3000 --network=osvcd-net -v /path/to/config/on/host:/usr/src/app/config scottharwell/osvcd`
+5. Start the osvcd container.  We will expose port 3000 to the host system so that it has access to our application.  Also, we point the configuration folder of the docker container to the folder on our host so that we can manage the configuration dynamically. `docker run --name osvcd -p 3000:3000 --network=osvcd-net -v /path/to/config/on/host:/usr/src/app/config scottharwell/osvc_dashboard`
 
 The application should now be available on your Docker host.  You can access the dashboard from a browser by going to http://domain.of.docker.host:3000 (use localhost if running on your local machine).
 
