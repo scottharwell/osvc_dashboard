@@ -14,7 +14,6 @@
     "@types/jquery": "^3.2.11",
     "@types/morgan": "^1.7.32",
     "@types/node": "^8.0.23",
-    "@types/promise": "^7.1.30",
     "@types/pug": "^2.0.4",
     "@types/redis": "^2.6.0",
     "@types/request": "^2.0.0",
